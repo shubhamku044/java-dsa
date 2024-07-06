@@ -5,11 +5,11 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         start = 0
         end = len(nums) - 1
-        while end > start:
-            mid = int(((end - start) / 2) + start)
+        while end >= start:
+            mid = int((end - start) / 2) + start
             if nums[mid] == target:
                 return mid
-            if target < mid:
+            if target < nums[mid]:
                 end = mid - 1
             else:
                 start = mid + 1
@@ -19,3 +19,6 @@ class Solution:
 
 if __name__ == "__main__":
     sol = Solution()
+    myList = []
+    pos = sol.search(myList, 1)
+    print(pos)
